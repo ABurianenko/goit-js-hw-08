@@ -88,7 +88,7 @@ function createPhotoMarkup(images) {
 container.insertAdjacentHTML("beforeend", createPhotoMarkup(images));
 container.addEventListener("click", event => {
     event.preventDefault();
-    if (event.currentTarget === event.target) {
+    if (event.currentTarget !== IMG) {
         return;
         }
 
