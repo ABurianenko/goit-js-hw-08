@@ -88,7 +88,7 @@ function createPhotoMarkup(images) {
 container.insertAdjacentHTML("beforeend", createPhotoMarkup(images));
 container.addEventListener("click", event => {
     event.preventDefault();
-    if (event.currentTarget !== IMG) {
+    if (event.target.nodeName !== `IMG`) {
         return;
         }
 
@@ -99,7 +99,7 @@ container.addEventListener("click", event => {
         <div class="modal">
         <img
         src="${event.target.dataset.source}"
-        alt="${event.target.description}" 
+        alt="${event.target.getAttribute('alt')}" 
         width = 1112
         height = 640/>
         </div>
